@@ -5,9 +5,12 @@
   "main": "index.js",
   "scripts": {
     "preinstall": "pnpm dlx only-allow pnpm",
-    "dev:app": "pnpm --filter @mono-react/app dev"
+    "dev:app": "pnpm --filter @mono-react/app dev",
+    "dev:suspense": "pnpm --filter @mono-react/suspense-loading dev"
   },
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "engines": {
     "node": ">=16.16.0",
     "pnpm": ">=7.16.0"
