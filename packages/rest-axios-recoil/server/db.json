@@ -1,0 +1,69 @@
+{
+  "episode": [
+    {
+      "title": "나 혼자만 레벨업 1화 - 프롤로그",
+      "body": "Duis ex est pariatur deserunt minim velit ad occaecat consequat ad reprehenderit esse.\n Duis fugiat cillum dolor amet in magna elit sint dolore anim est commodo magna esse. Eu reprehenderit ex aliqua tempor cillum eu ea nulla fugiat minim esse anim ad. \n Consectetur irure sunt labore mollit adipisicing eiusmod Lorem aute sit eiusmod ut do. \n Eiusmod culpa do fugiat voluptate esse. Dolore est pariatur quis labore.",
+      "published": true,
+      "writter": "추공",
+      "createdAt": "2022-12-01 00:00:00",
+      "updatedAt": "2022-12-01 00:00:00",
+      "userId": 1,
+      "commentCount": 1,
+      "episodeLikeCount": [{ "id": 1 }, { "id": 2 }],
+      "comments": [{ "commentId": 1 }],
+      "id": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "penname": "하늘곰",
+      "text": "시작부터 너무 재밌네요!",
+      "episodeId": 1,
+      "userId": 2,
+      "createdAt": "2022-12-01 10:10:00",
+      "updatedAt": "2022-12-01 10:10:00",
+      "deletedAt": null
+    },
+    {
+      "id": 2,
+      "penname": "하늘곰",
+      "text": "진짜 대박이네요",
+      "episodeId": 1,
+      "userId": 2,
+      "createdAt": "2022-12-01 20:20:00",
+      "updatedAt": "2022-12-01 20:20:00",
+      "deletedAt": null
+    }
+  ],
+  "episodelikes": [
+    {
+      "id": 1,
+      "createdAt": "2022-12-01 13:00:00",
+      "userId": 2,
+      "episodeId": 1
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "penname": "추공",
+      "email": "chugong@noveling.com",
+      "createdAt": "2022-11-01 10:00:00",
+      "updatedAt": "2022-11-01 10:00:00",
+      "episode": [{ "id": 1 }],
+      "comments": [],
+      "episodeLikes": []
+    },
+    {
+      "id": 2,
+      "penname": "하늘곰",
+      "email": "skybear@noveling.com",
+      "createdAt": "2022-10-01 20:00:00",
+      "updatedAt": "2022-10-01 20:00:00",
+      "episode": [],
+      "comments": [{ "commentId": 1 }],
+      "episodelikes": [{ "id": 1 }]
+    }
+  ]
+}

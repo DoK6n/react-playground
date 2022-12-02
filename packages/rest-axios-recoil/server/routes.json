@@ -1,0 +1,12 @@
+{
+  "/api/v1/user": "/user",
+  "/api/v1/user/:id": "/user/:id",
+  "/api/v1/episode": "/episode",
+  "/api/v1/episode/:id": "/episode/:id",
+  "/api/v1/episode/update/:id": "/episode/:id",
+  "/api/v1/episode/delete/:id": "/episode/:id",
+  "/api/v1/comment/write/:id": "/episode/:id",
+  "/api/v1/comment/:id": "/episode/:id",
+  "/api/v1/comment/all": "/episode",
+  "/api/v1/comment/delete/:id": "/episode/:id"
+}

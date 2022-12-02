@@ -1,0 +1,42 @@
+{
+  "__[GET]/api/v1/user/:id__": "유저 정보 조회",
+  "/api/v1/user/:id": "/user/:id",
+
+  "__[POST]/api/v1/user/:id/episode/create?episodId=:episodId__": "새 에피소드 발행시 유저 에피소드 정보에 추가",
+  "/api/v1/user/:id/episode/create?episodId=:episodId": "/user/:id/episode/create?episodId=:episodId",
+  "__[POST]/api/v1/user/:id/episode/delete?episodId=:episodId__": "에피소드 삭제시 유저 에피소드 정보에서 제거",
+  "/api/v1/user/:id/episode/delete?episodId=:episodId": "/user/:id/episode/delete?episodId=:episodId",
+
+  "__[POST]/api/v1/user/:id/comment/create?episodId=:episodId__": "새 댓글 작성시 유저 댓글 정보에 추가",
+  "/api/v1/user/:id/comment/create?episodId=:episodId": "/user/:id/comment/create?episodId=:episodId",
+  "__[POST]/api/v1/user/:id/comment/delete?episodId=:episodId__": "댓글 삭제시 유저 댓글 정보에서 제거",
+  "/api/v1/user/:id/comment/delete?episodId=:episodId": "/user/:id/comment/delete?episodId=:episodId",
+
+  "__[POST]/api/v1/user/:id/episodelikes/create?episodId=:episodId__": "좋아요 누르면 유저 좋아요 정보에 추가",
+  "/api/v1/user/:id/episodelikes/create?episodId=:episodId": "/user/:id/episodelikes/create?episodId=:episodId",
+  "__[POST]/api/v1/user/:id/episodelikes/delete?episodId=:episodId__": "좋아요 삭제시 유저 좋아요 정보에서 제거",
+  "/api/v1/user/:id/episodelikes/delete?episodId=:episodId": "/user/:id/episodelikes/delete?episodId=:episodId",
+
+  "__[POST]/api/v1/episode/write__": "새 에피소드 발행",
+  "/api/v1/episode/write": "/episode",
+  "__[GET]/api/v1/episode/search/:id__": "에피소드 조회",
+  "/api/v1/episode/search/:id": "/episode/:id",
+  "__[PATCH]/api/v1/episode/edit/:id__": "에피소드 수정",
+  "/api/v1//episode/edit/update/:id": "/episode/:id",
+  "__[DELETE]/api/v1/episode/delete/:id__": "에피소드 삭제",
+  "/api/v1/episode/delete/:id": "/episode/:id",
+
+  "__[POST]/api/v1/comment/write/:id__": "에피소드 댓글 작성",
+  "/api/v1/comment/write/:id": "/episode/:id",
+  "__[GET]/api/v1/comment/search/:id__": "에피소드 댓글 조회",
+  "/api/v1/comment/search/:id": "/episode/:id",
+  "__[DELETE]/api/v1/comment/delete/:id__": "에피소드 댓글 삭제",
+  "/api/v1/comment/delete/:id": "/episode/:id",
+
+  "__[POST]/api/v1/episodelikes/write/:id__": "좋아요 누름",
+  "/api/v1/episodelikes/write/:id": "/episodelikes/:id",
+  "__[GET]/api/v1/episodelikes/search/:id__": "특정 좋아요 정보 조회",
+  "/api/v1/episodelikes/search/:id": "/episodelikes/:id",
+  "__[DELETE]/api/v1/episodelikes/delete/:id__": "좋아요 취소",
+  "/api/v1/episodelikes/delete/:id": "/episodelikes/:id"
+}
