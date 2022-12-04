@@ -9,7 +9,8 @@
     "dev:suspense": "pnpm --filter @mono-react/suspense-loading dev",
     "ssr:build": "pnpm --filter @mono-react/ssr-minimum-react16 ssr:build",
     "dev:flash": "pnpm --filter @mono-react/flashlight-effect dev",
-    "rest-axios-recoil": "pnpm --filter @mono-react/rest-axios-recoil"
+    "rest-axios-recoil": "pnpm --filter @mono-react/rest-axios-recoil",
+    "react-router-tutorial-v6": "pnpm --filter @mono-react/react-router-tutorial-v6"
   },
   "workspaces": [
     "packages/*"
