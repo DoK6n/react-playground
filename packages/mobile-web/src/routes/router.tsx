@@ -4,7 +4,7 @@ import Index from './Index';
 import List, { listLoader } from './List';
 import Root, { rootLoader } from './Root';
 import Todo, { todoLoader } from './Todo';
-import Search, { searchLoader } from './Search';
+import Search from './Search';
 import Home, { homeLoader } from './Home';
 import Setting, { settingLoader } from './Setting';
 import ErrorPage from './ErrorPage';
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
           {
             path: 'search',
             element: <Search />,
-            loader: searchLoader,
+            // loader: searchLoader,
             children: [
               {
                 index: true,

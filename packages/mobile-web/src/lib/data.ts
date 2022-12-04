@@ -1,6 +1,8 @@
+import { fuzzySearch } from './fuzzySearch';
+
 export type DataType = {
   id: number;
-  title: string | number;
+  title: string;
 };
 
 export const data: DataType[] = [
@@ -22,13 +24,12 @@ export const data: DataType[] = [
   { id: 15, title: '고양이' },
   { id: 16, title: '강아지' },
   { id: 17, title: 'cat' },
-  { id: 18, title: 568 },
-  { id: 19, title: 3500 },
-  { id: 20, title: 4500 },
-  { id: 21, title: 1234 },
-  { id: 22, title: 4356 },
+  { id: 18, title: '568' },
+  { id: 19, title: '3500' },
+  { id: 20, title: '4500' },
 ];
 
-export const searchData = (qs: string) => data.filter(d => d.title === qs);
-
 export const getDataById = (id: number) => data.filter(d => d.id === id)[0];
+
+export const getSearchData = (qs: string) =>
+  data.filter(d => fuzzySearch(qs, d.title));

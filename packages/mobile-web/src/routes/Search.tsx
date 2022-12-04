@@ -11,28 +11,23 @@ import Block from '../components/Block';
 import Footer from '../components/Footer';
 import GoDocsButton from '../components/GoDocsButton';
 import MobileHeader from '../components/Header';
-import { searchData, DataType } from '../lib/data';
+import { DataType, getSearchData } from '../lib/data';
 import useDebounce from '../lib/hooks/useDebounce';
 
-export const searchLoader: LoaderFunction = async ({ request }) => {
-  return { searchData: searchData };
-};
-
-interface LoaderResult {
-  searchData: (qs: string) => DataType[];
-}
+// export const searchLoader: LoaderFunction = async ({ request }) => {
+//   return { };
+// };
 
 function Search() {
   const [data, setData] = useState<DataType[]>([]);
-  const { searchData } = useLoaderData() as LoaderResult;
   const [searchParams] = useSearchParams();
   const [searchText, setSearchText] = useState(searchParams.get('q') ?? '');
   const navigate = useNavigate();
-  const [debouncedSearchText] = useDebounce(searchText, 500);
+  const [debouncedSearchText] = useDebounce(searchText, 300);
 
   useEffect(() => {
     navigate(`/search?q=${debouncedSearchText}`);
-    setData(searchData(debouncedSearchText));
+    setData(getSearchData(debouncedSearchText));
   }, [debouncedSearchText, navigate]);
 
   return (
