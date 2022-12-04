@@ -10,7 +10,8 @@
     "ssr:build": "pnpm --filter @mono-react/ssr-minimum-react16 ssr:build",
     "dev:flash": "pnpm --filter @mono-react/flashlight-effect dev",
     "rest-axios-recoil": "pnpm --filter @mono-react/rest-axios-recoil",
-    "react-router-tutorial-v6": "pnpm --filter @mono-react/react-router-tutorial-v6"
+    "react-router-tutorial-v6": "pnpm --filter @mono-react/react-router-tutorial-v6",
+    "mobile-web": "pnpm --filter @mono-react/mobile-web"
   },
   "workspaces": [
     "packages/*"
