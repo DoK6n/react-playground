@@ -9,8 +9,9 @@ import {
 } from 'react-router-dom';
 import Block from '../components/Block';
 import Footer from '../components/Footer';
+import GoDocsButton from '../components/GoDocsButton';
 import MobileHeader from '../components/Header';
-import { searchData } from '../lib/data';
+import { searchData, DataType } from '../lib/data';
 import useDebounce from '../lib/hooks/useDebounce';
 
 export const searchLoader: LoaderFunction = async ({ request }) => {
@@ -18,11 +19,11 @@ export const searchLoader: LoaderFunction = async ({ request }) => {
 };
 
 interface LoaderResult {
-  searchData: (qs: string) => [];
+  searchData: (qs: string) => DataType[];
 }
 
 function Search() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<DataType[]>([]);
   const { searchData } = useLoaderData() as LoaderResult;
   const [searchParams] = useSearchParams();
   const [searchText, setSearchText] = useState(searchParams.get('q') ?? '');
@@ -47,9 +48,10 @@ function Search() {
       />
       <Block>
         {data ? (
-          data?.map((d, i) => (
-            <div css={cardStyle} key={i}>
-              {d}
+          data?.map(d => (
+            <div css={cardStyle} key={d.id}>
+              {d.title}
+              <GoDocsButton id={d.id} />
             </div>
           ))
         ) : (

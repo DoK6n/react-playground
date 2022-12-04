@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { LoaderFunction, Outlet, useLoaderData } from 'react-router-dom';
 import Block from '../components/Block';
 import FullCard from '../components/FullCard';
 import MobileHeader from '../components/Header';
+import { getDataById } from '../lib/data';
 
 export const docsLoader: LoaderFunction = async ({ request }) => {
   const path = new URL(request.url).pathname.split('/');
@@ -14,14 +16,16 @@ interface LoaderResult {
 }
 
 function Docs() {
+  const [searchResultData, setSearchResultData] = useState();
   const { docsId } = useLoaderData() as LoaderResult;
+  const data = getDataById(Number(docsId));
 
   return (
     <>
       <MobileHeader title={<div>Docs</div>} />
       <Block>
         <FullCard>
-          {docsId}. Docs
+          {docsId}. {data.title}
           <Outlet />
         </FullCard>
       </Block>
