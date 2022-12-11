@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { LoaderFunction, Outlet, useLoaderData } from 'react-router-dom';
 import Block from '../components/Block';
 import FullCard from '../components/FullCard';
@@ -16,7 +15,6 @@ interface LoaderResult {
 }
 
 function Docs() {
-  const [searchResultData, setSearchResultData] = useState();
   const { docsId } = useLoaderData() as LoaderResult;
   const data = getDataById(Number(docsId));
 
