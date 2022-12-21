@@ -13,7 +13,9 @@
     "react-router-tutorial-v6": "pnpm --filter @mono-react/react-router-tutorial-v6",
     "mobile-web": "pnpm --filter @mono-react/mobile-web",
     "opren:run": "pnpm --filter @mono-react/optimize-rendering",
-    "opren:add": "pnpm add --filter @mono-react/optimize-rendering"
+    "opren:add": "pnpm add --filter @mono-react/optimize-rendering",
+    "redux:run": "pnpm --filter @mono-react/redux",
+    "redux:add": "pnpm add --filter @mono-react/redux"
   },
   "workspaces": [
     "packages/*"
