@@ -1,16 +1,26 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { legacy_createStore as createStore } from 'redux';
-import App from './App'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
-import './index.css'
-// import './lib/store/exercise';
+import { legacy_createStore as createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import { composeWithDevTools } from 'redux-devtools-extension'; // 리덕스 개발자 도구
+import ReduxThunk from 'redux-thunk';
+
+import App from './App';
+import './index.css';
 import rootReducer from './lib/store';
-const store = createStore(rootReducer); // 스토어를 만듭니다.
-console.log(store.getState()); // 스토어의 상태를 확인해봅시다.
+import logger from 'redux-logger';
+// import logger from './lib/middleware/logger';
+
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(ReduxThunk, logger)),
+); // 스토어를 만듭니다.
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
-)
+  </Provider>,
+  // </React.StrictMode>,
+);
