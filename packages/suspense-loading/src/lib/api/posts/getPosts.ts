@@ -10,7 +10,7 @@ export function getPosts({ id }: UserId) {
   });
 
   return {
-    read() {
+    read: () => {
       if (posts === null) {
         throw suspender;
       } else {

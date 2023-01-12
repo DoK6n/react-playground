@@ -10,7 +10,7 @@ export function getUser({ id }: UserId) {
   });
 
   return {
-    read() {
+    read: () => {
       if (user === null) {
         throw suspender;
       } else {
