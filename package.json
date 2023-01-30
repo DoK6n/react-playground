@@ -15,7 +15,9 @@
     "opren:run": "pnpm --filter @mono-react/optimize-rendering",
     "opren:add": "pnpm add --filter @mono-react/optimize-rendering",
     "redux:run": "pnpm --filter @mono-react/redux",
-    "redux:add": "pnpm add --filter @mono-react/redux"
+    "redux:add": "pnpm add --filter @mono-react/redux",
+    "react-query:add": "pnpm add --filter @mono-react/react-query",
+    "react-query:run": "pnpm --filter @mono-react/react-query"
   },
   "workspaces": [
     "packages/*"

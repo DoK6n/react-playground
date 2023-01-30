@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 // 컴포넌트 최적화를 위하여 React.memo를 사용합니다
-const TodoItem = React.memo(function TodoItem({ todo, onToggle }) {
+const TodoItem = React.memo(({ todo, onToggle }) => {
   return (
     <li
       style={{ textDecoration: todo.done ? 'line-through' : 'none' }}
@@ -13,7 +13,7 @@ const TodoItem = React.memo(function TodoItem({ todo, onToggle }) {
 });
 
 // 컴포넌트 최적화를 위하여 React.memo를 사용합니다
-const TodoList = React.memo(function TodoList({ todos, onToggle }) {
+const TodoList = React.memo(({ todos, onToggle }) => {
   return (
     <ul>
       {todos.map(todo => (
