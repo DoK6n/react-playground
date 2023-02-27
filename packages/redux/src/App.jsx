@@ -1,13 +1,15 @@
-import CounterContainer from './containers/CounterContainer';
+// import CounterContainer from './containers/CounterContainer';
 // import TodosContainer from './containers/TodosContainer';
 // import PostListContainer from './containers/PostListContainer';
-import './App.css';
+import './app.scss';
+import Articles from './components/article/Articles';
 
 function App() {
   return (
-    <div className='App'>
-      <CounterContainer />
-      <hr />
+    <div>
+      <Articles />
+      {/* <CounterContainer /> */}
+      {/* <hr /> */}
       {/* <PostListContainer /> */}
       {/* <TodosContainer /> */}
     </div>

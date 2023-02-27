@@ -7,10 +7,10 @@ import { composeWithDevTools } from 'redux-devtools-extension'; // 리덕스 개
 import ReduxThunk from 'redux-thunk';
 
 import App from './App';
-import './index.css';
+import './index.scss';
 import rootReducer from './lib/store';
-import logger from 'redux-logger';
-// import logger from './lib/middleware/logger';
+// import logger from 'redux-logger';
+import logger from './lib/middleware/logger';
 
 const store = createStore(
   rootReducer,

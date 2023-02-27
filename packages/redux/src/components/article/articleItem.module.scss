@@ -1,0 +1,44 @@
+.box {
+  border: 1px solid gray;
+  padding: 6px 16px;
+}
+
+.itemLine {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  outline: none;
+  max-height: 2.5em;
+}
+
+.detailBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 8px;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 3em;
+};
+
+.publishedBox {
+  background: teal;
+  color: #fff;
+  border-radius: 6px;
+  padding: 0 8px;
+  font-size: 12px;
+};
+
+.body {
+  text-align: start;
+  margin-top: 4em;
+};
+
+.date {
+  font-style: italic;
+  color: gray;
+};
