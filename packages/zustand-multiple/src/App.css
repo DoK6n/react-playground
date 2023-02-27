@@ -1,0 +1,21 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.search-filter-item {
+  border: 2px solid sandybrown;
+  padding: 16px;
+}
+
+.search-filter-box {
+  border: 4px solid darkgray;
+  display: flex;
+  flex-direction: row;
+}
+
+.search-filter-item > label {
+  margin-right: 6px;
+}

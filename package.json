@@ -17,7 +17,9 @@
     "redux:run": "pnpm --filter @mono-react/redux",
     "redux:add": "pnpm add --filter @mono-react/redux",
     "react-query:add": "pnpm add --filter @mono-react/react-query",
-    "react-query:run": "pnpm --filter @mono-react/react-query"
+    "react-query:run": "pnpm --filter @mono-react/react-query",
+    "zustand-multiple:add": "pnpm add --filter @mono-react/zustand-multiple",
+    "zustand-multiple:run": "pnpm --filter @mono-react/zustand-multiple"
   },
   "workspaces": [
     "packages/*"
