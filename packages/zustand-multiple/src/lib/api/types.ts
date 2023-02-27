@@ -27,11 +27,16 @@ export interface UserInfo {
   company: Company;
 }
 
-export type UserId = Pick<UserInfo, "id">;
+export type UserId = Pick<UserInfo, 'id'>;
 
 export interface Post {
   userId: number;
   id: number | string;
   title: string;
   body: string;
+}
+
+export interface ValidationError {
+  message: string;
+  errors: Record<string, string[]>;
 }
