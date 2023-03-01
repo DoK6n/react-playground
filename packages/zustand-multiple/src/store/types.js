@@ -12,10 +12,14 @@
  */
 
 /**
+ * @typedef {[["zustand/devtools", never], ["zustand/immer", never]]} MiddleWaresType
+ */
+
+/**
  * @typedef {import('zustand').StateCreator<
  *    BearSlice & FishSlice,
+ *    MiddleWaresType,
  *    [],
- *    [["zustand/devtools", never], ["zustand/immer", never]],
  *    FishSlice
  * >} FishSliceCreator
  */
@@ -23,8 +27,8 @@
 /**
  * @typedef {import('zustand').StateCreator<
  *    BearSlice & FishSlice,
+ *    MiddleWaresType,
  *    [],
- *    [["zustand/devtools", never], ["zustand/immer", never]],
  *    BearSlice
  *  >} BearSliceCreator
  */

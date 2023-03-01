@@ -13,16 +13,17 @@ export const createFishSlice = (set) => ({
 /** @type {BearSliceCreator} */
 export const createBearSlice = (set) => ({
   bears: 0,
-  addBear: () => set((state) => ({ bears: state.bears + 1 })),
+  // addBear: () => set((state) => ({ bears: state.bears + 1 })),
+  addBear: () => set((state) => {}),
   eatFish: () => set((state) => ({ fishes: state.fishes - 1 })),
 });
 
 /** @param {import('zustand').StateCreator<BearSlice & FishSlice>} f */
-const middleware = (f) => devtools(immer(f));
+const middlewares = (f) => devtools(immer(f));
 
 /** @type {BoundStore} */
 export const useBoundStore = create(
-  middleware((...args) => ({
+  middlewares((...args) => ({
     ...createBearSlice(...args),
     ...createFishSlice(...args),
   })),
