@@ -3,7 +3,7 @@ import { axiosClient } from '../client';
 import { delay } from '../delay';
 import { Post, UserId, ValidationError } from '../types';
 
-export async function getPosts({ id }: UserId) {
+export async function getPosts(id: UserId) {
   try {
     const response = await axiosClient.get<Post[]>(`/posts?userId=${id}`);
     await delay(3000);

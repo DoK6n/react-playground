@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import './App.css';
-import { useBoundStore } from './store/useBoundStore';
+import { useBoundStore } from './store/useSearchPostsStore';
 
 function App() {
   // const searchFilterState = useBoundStore((state) => state.searchFilterState);
   // const postState = useBoundStore((state) => state.postState);
-  const { searchFilterState, postState, fetchPost, setPostId, setUserId } =
+  const { searchFilter, fetchPosts, posts, setPostId, setUserId } =
     useBoundStore();
 
   return (
@@ -14,23 +14,17 @@ function App() {
         <div className='search-filter-item'>
           <label>users</label>
           <select>
-            <option value={searchFilterState.userId}>
-              {searchFilterState.userId}
-            </option>
+            <option value={searchFilter.userId}>{searchFilter.userId}</option>
           </select>
         </div>
         <div className='search-filter-item'>
           <label>posts</label>
           <select>
-            <option value={searchFilterState.postId}>
-              {searchFilterState.postId}
-            </option>
+            <option value={searchFilter.postId}>{searchFilter.postId}</option>
           </select>
         </div>
       </div>
-      <div>
-        
-      </div>
+      <div></div>
     </div>
   );
 }

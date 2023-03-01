@@ -1,5 +1,6 @@
 import type { StateCreator } from 'zustand';
-import { type PostSlice } from './createPostSlice';
+import { MiddleWaresType } from '../storeTypes';
+import { type PostsSlice } from './createPostSlice';
 
 export interface SearchFilter {
   userId: number;
@@ -12,28 +13,24 @@ const initialSearchFilterState: SearchFilter = {
 };
 
 export interface SearchFilterSlice {
-  searchFilterState: SearchFilter;
+  searchFilter: SearchFilter;
   setUserId: (id: number) => void;
   setPostId: (id: number) => void;
 }
 
 export const createSearchFilterSlice: StateCreator<
-  SearchFilterSlice & PostSlice,
-  [],
+  SearchFilterSlice & PostsSlice,
+  MiddleWaresType,
   [],
   SearchFilterSlice
 > = (set) => ({
-  searchFilterState: initialSearchFilterState,
+  searchFilter: initialSearchFilterState,
   setUserId: (id) =>
-    set(({ searchFilterState }) => {
-      return {
-        searchFilterState: { ...searchFilterState, userId: id },
-      };
+    set(({ searchFilter }) => {
+      searchFilter.userId = id;
     }),
   setPostId: (id) =>
-    set(({ searchFilterState }) => {
-      return {
-        searchFilterState: { ...searchFilterState, userId: id },
-      };
+    set(({ searchFilter }) => {
+      searchFilter.postId = id;
     }),
 });
