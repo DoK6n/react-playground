@@ -291,6 +291,7 @@ importers:
       '@types/react-dom': ^18.0.10
       '@vitejs/plugin-react': ^3.1.0
       axios: ^1.2.0
+      immer: ^9.0.19
       react: ^18.2.0
       react-dom: ^18.2.0
       typescript: ^4.9.3
@@ -298,9 +299,10 @@ importers:
       zustand: ^4.3.1
     dependencies:
       axios: 1.2.0
+      immer: 9.0.19
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      zustand: 4.3.1_react@18.2.0
+      zustand: 4.3.1_immer@9.0.19+react@18.2.0
     devDependencies:
       '@types/axios': 0.14.0
       '@types/react': 18.0.28
@@ -9288,6 +9290,10 @@ packages:
     resolution: {integrity: sha512-O3sR1/opvCDGLEVcvrGTMtLac8GJ5IwZC4puPrLuRj3l7ICKvkmA0vGuU9OW8mV9WIBRnaxp5GJh9IEAaNOoYg==}
     dev: false
 
+  /immer/9.0.19:
+    resolution: {integrity: sha512-eY+Y0qcsB4TZKwgQzLaE/lqYMlKhv5J9dyd2RhhtGhNo2njPXDqU9XPfcNfa3MIDsdtZt5KlkIsirlo4dHsWdQ==}
+    dev: false
+
   /immutable/4.2.2:
     resolution: {integrity: sha512-fTMKDwtbvO5tldky9QZ2fMX7slR0mYpY5nbnFWYp0fOzDhHqhgIw9KoYgxLWsoNTS9ZHGauHj18DTyEw6BK3Og==}
     dev: true
@@ -15554,6 +15560,23 @@ packages:
       string-width: 4.2.3
       y18n: 5.0.8
       yargs-parser: 21.1.1
+    dev: false
+
+  /zustand/4.3.1_immer@9.0.19+react@18.2.0:
+    resolution: {integrity: sha512-EVyo/eLlOTcJm/X5M00rwtbYFXwRVTaRteSvhtbTZUCQFJkNfIyHPiJ6Ke68MSWzcKHpPzvqNH4gC2ZS/sbNqw==}
+    engines: {node: '>=12.7.0'}
+    peerDependencies:
+      immer: '>=9.0'
+      react: '>=16.8'
+    peerDependenciesMeta:
+      immer:
+        optional: true
+      react:
+        optional: true
+    dependencies:
+      immer: 9.0.19
+      react: 18.2.0
+      use-sync-external-store: 1.2.0_react@18.2.0
     dev: false
 
   /zustand/4.3.1_react@18.2.0:

@@ -19,7 +19,7 @@ export interface SearchFilterSlice {
 }
 
 export const createSearchFilterSlice: StateCreator<
-  SearchFilterSlice & PostsSlice,
+  PostsSlice & SearchFilterSlice,
   MiddleWaresType,
   [],
   SearchFilterSlice

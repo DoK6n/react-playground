@@ -22,7 +22,12 @@ export const useBoundStore = create<PostsSlice & SearchFilterSlice>()(
 
 // subscribeWithSelector
 useBoundStore.subscribe(
-  (state) => state,
-  (previousSelectedState) =>
-    console.log('[subscribe] ➜', previousSelectedState),
+  (state) => state.searchFilter.userId,
+  (previousSelectedState) => {
+    const { searchFilter, fetchPosts } = useBoundStore.getState();
+    const selectedUserId = searchFilter.userId;
+
+    fetchPosts(selectedUserId);
+    console.log('[subscribe] ➜', previousSelectedState);
+  },
 );

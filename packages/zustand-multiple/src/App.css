@@ -19,3 +19,11 @@
 .search-filter-item > label {
   margin-right: 6px;
 }
+
+ul {
+  list-style: none;
+  text-align: start;
+  border: 1px solid darkslategray;
+  border-radius: 6px;
+  padding: 1rem;
+}

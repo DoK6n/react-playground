@@ -6,8 +6,8 @@ import { Post, UserId, ValidationError } from '../types';
 export async function getPosts(id: UserId) {
   try {
     const response = await axiosClient.get<Post[]>(`/posts?userId=${id}`);
-    await delay(3000);
-
+    // await delay(3000);
+    console.log(response.data);
     return response.data;
   } catch (error) {
     // solution 1

@@ -8,6 +8,7 @@ import { getPosts } from '../../lib/api/posts/getPosts';
 import { Post } from '../../lib/api/types';
 import { MiddleWaresType } from '../storeTypes';
 import { SearchFilterSlice } from './createSearchFilterSlice';
+import { current } from 'immer';
 
 const initialPostsState: Post[] = [];
 
@@ -17,7 +18,7 @@ export interface PostsSlice {
 }
 
 export const createPostsSlice: StateCreator<
-  SearchFilterSlice & PostsSlice,
+  PostsSlice & SearchFilterSlice,
   MiddleWaresType,
   [],
   PostsSlice
@@ -26,10 +27,14 @@ export const createPostsSlice: StateCreator<
   fetchPosts: async (id) => {
     try {
       const data = await getPosts(id);
-      if (!data) return;
+      if (!data) {
+        console.log('없음');
+        return;
+      }
 
       set(({ posts }) => {
-        posts = data;
+        posts.length = 0;
+        posts.push(...data);
       });
     } catch (error) {
       console.error(error);
