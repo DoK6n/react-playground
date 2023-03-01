@@ -5,21 +5,31 @@ import { immer } from 'zustand/middleware/immer';
 import './types';
 
 /** @type {FishSliceCreator} */
-export const createFishSlice = (set) => ({
+export const createFishSlice = (set, get) => ({
   fishes: 0,
-  addFish: () => set((state) => ({ fishes: state.fishes + 1 })),
+  addFish: () =>
+    set((state) => {
+      state.fishes += 1;
+    }),
 });
 
 /** @type {BearSliceCreator} */
-export const createBearSlice = (set) => ({
+
+/** @type {import('zustand').StateCreator<BearSlice & FishSlice, MiddleWaresType, [], BearSlice>} */
+export const createBearSlice = (set, get) => ({
   bears: 0,
-  // addBear: () => set((state) => ({ bears: state.bears + 1 })),
-  addBear: () => set((state) => {}),
-  eatFish: () => set((state) => ({ fishes: state.fishes - 1 })),
+  addBear: () =>
+    set((state) => {
+      state.bears += 1;
+    }),
+  eatFish: () =>
+    set((state) => {
+      state.fishes -= 1;
+    }),
 });
 
 /** @param {import('zustand').StateCreator<BearSlice & FishSlice>} f */
-const middlewares = (f) => devtools(immer(f));
+const middlewares = (f) => immer(devtools(f));
 
 /** @type {BoundStore} */
 export const useBoundStore = create(

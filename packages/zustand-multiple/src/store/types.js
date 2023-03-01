@@ -12,7 +12,7 @@
  */
 
 /**
- * @typedef {[["zustand/devtools", never], ["zustand/immer", never]]} MiddleWaresType
+ * @typedef {[["zustand/immer", never], ["zustand/devtools", never]]} MiddleWaresType
  */
 
 /**
