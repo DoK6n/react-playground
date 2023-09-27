@@ -19,7 +19,8 @@
     "react-query:run": "pnpm --filter @mono-react/react-query",
     "zustand-multiple:add": "pnpm add --filter @mono-react/zustand-multiple",
     "zustand-multiple:run": "pnpm --filter @mono-react/zustand-multiple",
-    "ve-next": "pnpm --filter @mono-react/ve-next"
+    "ve-next": "pnpm --filter @mono-react/ve-next",
+    "tdd-todo": "pnpm --filter tdd-todo"
   },
   "workspaces": [
     "packages/*"
