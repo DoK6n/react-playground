@@ -113,13 +113,15 @@ module.exports = 'test-file-stub'
 # test/App.test.tsx
 
 ```ts
-import { render, screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import App from '../src/App'
 
-test('Renders main element', () => {
-  render(<App />)
-  const mainElement = screen.getByRole('main')
-  expect(mainElement).toBeInTheDocument()
+describe('Renders main element', () => {
+  it('renders tasks', () => {
+    const { container } = render(<App />)
+
+    expect(container).toHaveTextContent('공식문서 읽기')
+  })
 })
 ```
 

@@ -1,7 +1,15 @@
-function List() {
+export type Task = { id: number; title: string }
+
+interface ListProps {
+  tasks: Task[]
+}
+
+function List({ tasks }: ListProps) {
   return (
     <ul>
-      <li>아무 일도 하기 싫다</li>
+      {tasks.map(task => (
+        <li key={task.id}>{task.title}</li>
+      ))}
     </ul>
   )
 }
