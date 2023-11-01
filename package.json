@@ -20,7 +20,8 @@
     "zustand-multiple:add": "pnpm add --filter @mono-react/zustand-multiple",
     "zustand-multiple:run": "pnpm --filter @mono-react/zustand-multiple",
     "ve-next": "pnpm --filter @mono-react/ve-next",
-    "tdd-todo": "pnpm --filter tdd-todo"
+    "tdd-todo": "pnpm --filter tdd-todo",
+    "sus-err": "pnpm --filter suspense-error-boundary-breadcrumb-router-layout-with-chakra-ui"
   },
   "workspaces": [
     "packages/*"
