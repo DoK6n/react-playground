@@ -1,56 +1,56 @@
 import { css } from '@emotion/react'
 
-export const flex = css`
+const flex = css`
   display: flex;
 `
 
-export const flexColumn = css`
+const flexColumn = css`
   flex-direction: column;
 `
 
-export const flexRow = css`
+const flexRow = css`
   flex-direction: row;
 `
 
-export const flexJustifyCenter = css`
+const flexJustifyCenter = css`
   ${flex}
   justify-content: center;
 `
 
-export const flexColumCenter = css`
+const flexColumCenter = css`
   ${flexJustifyCenter}
   flex-direction: column;
 `
 
-export const flexAlignCenter = css`
+const flexAlignCenter = css`
   ${flex}
   align-items: center;
 `
 
-export const flexJustifyAlignCenter = css`
+const flexJustifyAlignCenter = css`
   ${flex}
   justify-content: center;
   align-items: center;
 `
 
-export const flex1 = css`
+const flex1 = css`
   flex: 1;
 `
 
-export const fullWidth = css`
+const fullWidth = css`
   width: 100%;
 `
 
-export const fullHeight = css`
+const fullHeight = css`
   height: 100%;
 `
 
-export const fullWidthHeight = css`
+const fullWidthHeight = css`
   ${fullWidth}
   ${fullHeight}
 `
 
-export const resetButton = css`
+const resetButton = css`
   appearance: none;
   border: 0;
   padding: 0;
@@ -59,7 +59,23 @@ export const resetButton = css`
   text-align: left;
 `
 
-export const cursorPointer = css`
+const cursorPointer = css`
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 `
+
+export const f = {
+  flex,
+  flexColumn,
+  flexRow,
+  flexJustifyCenter,
+  flexColumCenter,
+  flexAlignCenter,
+  flexJustifyAlignCenter,
+  flex1,
+  fullWidth,
+  fullHeight,
+  fullWidthHeight,
+  resetButton,
+  cursorPointer,
+}

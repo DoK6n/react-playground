@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom'
 import styled from '@emotion/styled'
-import * as f from '~/common/lib/f.css'
+import { f } from '~/common/lib/f.css'
 
 export default function LoginLayout() {
   return (

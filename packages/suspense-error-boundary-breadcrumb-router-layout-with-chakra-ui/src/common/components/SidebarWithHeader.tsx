@@ -32,7 +32,6 @@ import {
 } from 'react-icons/fi'
 import { IconType } from 'react-icons'
 import { PropsWithChildren } from 'react'
-import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 
 interface LinkItemProps {
@@ -223,7 +222,7 @@ const SidebarWithHeader = ({ children }: PropsWithChildren) => {
 }
 
 const heightSize = css`
-  height: calc(var(--vh, 0.9vh) * 100);
+  /* height: calc(var(--vh, 0.9vh) * 100); */
   min-height: calc(var(--vh, 0.9vh) * 100);
 `
 
