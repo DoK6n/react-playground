@@ -1,76 +1,48 @@
 import { f } from '~/common/lib/f.css'
 import styled from '@emotion/styled'
+import { Skeleton, StatGroup } from '@chakra-ui/react'
+import { WarningTwoIcon } from '@chakra-ui/icons'
+import { Suspense } from 'react'
+import { ErrorBoundary } from 'react-error-boundary'
+import StatCard from '~/features/dashboard/StatCard'
 import Card from '~/common/components/Card'
-import StatBox, { Stat } from '~/common/components/StatBox'
-import { StatGroup } from '@chakra-ui/react'
+import { getStatList } from '~/common/lib/api/stat'
+import CustomErrorBoundary from '~/common/components/ClassErrorBoundary'
 
-const statList: Stat[] = [
-  { label: 'Sent', num: 345670, dailyPercentChange: 23.36 },
-  { label: 'Clicked', num: 45, dailyPercentChange: -9.05 },
-  { label: 'Sent', num: 345670, dailyPercentChange: 23.36 },
-  { label: 'Clicked', num: 45, dailyPercentChange: -9.05 },
-  { label: 'Sent', num: 345670, dailyPercentChange: 23.36 },
-  { label: 'Clicked', num: 45, dailyPercentChange: -9.05 },
-]
+const ErrorIcon = () => (
+  <StatGroup height='5.4rem'>
+    <WarningTwoIcon w='20' h='20' color={'orange.500'} />
+  </StatGroup>
+)
+
+const SkeletonStat = () => <Skeleton height='5.4rem' />
 
 export default function DashboardPage() {
   return (
     <Block>
-      <Card
-        header='throw promise - suspense, react-error-boundary, fetch'
-        hasHeading
-        body={
-          <StatGroup>
-            {statList.map(stat => (
-              <StatBox stat={stat} />
-            ))}
-          </StatGroup>
-        }
-      />
-      <Card
-        header='throw promise - suspense, class error boundary, fetch'
-        hasHeading
-        body={
-          <StatGroup>
-            {statList.map(stat => (
-              <StatBox stat={stat} />
-            ))}
-          </StatGroup>
-        }
-      />
-      <Card
-        header='use - suspense, class error boundary, fetch'
-        hasHeading
-        body={
-          <StatGroup>
-            {statList.map(stat => (
-              <StatBox stat={stat} />
-            ))}
-          </StatGroup>
-        }
-      />
-      <Card
-        header='react-query - suspense, react-error-boundary, fetch'
-        hasHeading
-        body={
-          <StatGroup>
-            {statList.map(stat => (
-              <StatBox stat={stat} />
-            ))}
-          </StatGroup>
-        }
-      />
-      <Card
-        header='swr - suspense, react-error-boundary, fetch'
-        hasHeading
-        body={
-          <StatGroup>
-            {statList.map(stat => (
-              <StatBox stat={stat} />
-            ))}
-          </StatGroup>
-        }
-      />
+      <Card header='throw promise - suspense, react-error-boundary, fetch'>
+        <ErrorBoundary fallback={<ErrorIcon />}>
+          <Suspense fallback={<SkeletonStat />}>
+            <StatCard resource={getStatList()} />
+          </Suspense>
+        </ErrorBoundary>
+      </Card>
+      <Card header='throw promise - suspense, custom class error boundary, fetch'>
+        <CustomErrorBoundary fallback={<ErrorIcon />}>
+          <Suspense fallback={<SkeletonStat />}>
+            <StatCard resource={getStatList()} />
+          </Suspense>
+        </CustomErrorBoundary>
+      </Card>
+      {/* <Card header='use - suspense, class error boundary, fetch'>
+        <StatCard resource={getStatList()} />
+      </Card>
+      <Card header='react-query - suspense, react-error-boundary, fetch'>
+        <StatCard resource={getStatList()} />
+      </Card>
+      <Card header='swr - suspense, react-error-boundary, fetch'>
+        <StatCard resource={getStatList()} />
+      </Card> */}
     </Block>
   )
 }

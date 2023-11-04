@@ -1,28 +1,21 @@
-import {
-  Card as ChakraCard,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Heading,
-} from '@chakra-ui/react'
+import { Card as ChakraCard, CardBody, CardFooter, CardHeader, Heading } from '@chakra-ui/react'
 import Show from './Show'
 
 type CardProps = {
   header?: React.ReactNode
-  body?: React.ReactNode
+  children?: React.ReactNode
   footer?: React.ReactNode
-  hasHeading?: boolean
 }
 
-export default function Card({ header, body, footer, hasHeading = false }: CardProps) {
+export default function Card({ header, children, footer }: CardProps) {
   return (
     <ChakraCard>
       <CardHeader>
-        <Show when={hasHeading} fallback={header}>
+        <Show when={!!header} fallback={header}>
           <Heading size='md'>{header}</Heading>
         </Show>
       </CardHeader>
-      <CardBody>{body}</CardBody>
+      <CardBody>{children}</CardBody>
       <CardFooter>{footer}</CardFooter>
     </ChakraCard>
   )

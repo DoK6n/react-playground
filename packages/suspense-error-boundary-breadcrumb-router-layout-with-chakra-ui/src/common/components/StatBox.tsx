@@ -22,7 +22,7 @@ export default function StatBox({ stat }: StatProps) {
   const isPositive = useMemo(() => stat.dailyPercentChange >= 0, [])
 
   return (
-    <ChakraStat>
+    <ChakraStat >
       <StatLabel>{stat.label}</StatLabel>
       <StatNumber>{stat.num.toLocaleString()}</StatNumber>
       <StatHelpText>
