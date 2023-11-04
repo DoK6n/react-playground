@@ -8,6 +8,8 @@ import StatCard from '~/features/dashboard/StatCard'
 import Card from '~/common/components/Card'
 import { getStatList } from '~/common/lib/api/stat'
 import CustomErrorBoundary from '~/common/components/ClassErrorBoundary'
+import StatCardWithUse from '~/features/dashboard/StatCardWithUse'
+import StatCardWithUseAwait from '~/features/dashboard/StatCardWithUseAwait'
 
 const ErrorIcon = () => (
   <StatGroup height='5.4rem'>
@@ -34,13 +36,24 @@ export default function DashboardPage() {
           </Suspense>
         </CustomErrorBoundary>
       </Card>
-      {/* <Card header='use - suspense, class error boundary, fetch'>
-        <StatCard resource={getStatList()} />
+      <Card header='use - suspense, class error boundary, fetch, cache'>
+        <CustomErrorBoundary fallback={<ErrorIcon />}>
+          <Suspense fallback={<SkeletonStat />}>
+            <StatCardWithUse />
+          </Suspense>
+        </CustomErrorBoundary>
       </Card>
-      <Card header='react-query - suspense, react-error-boundary, fetch'>
-        <StatCard resource={getStatList()} />
+      <Card header='useAwait - suspense, class error boundary, fetch, cache'>
+        <CustomErrorBoundary fallback={<ErrorIcon />}>
+          <Suspense fallback={<SkeletonStat />}>
+            <StatCardWithUseAwait />
+          </Suspense>
+        </CustomErrorBoundary>
       </Card>
-      <Card header='swr - suspense, react-error-boundary, fetch'>
+      {/* <Card header='react-query - suspense, react-error-boundary, fetch'>
+        <StatCard resource={getStatList()} />
+      </Card> */}
+      {/* <Card header='swr - suspense, react-error-boundary, fetch'>
         <StatCard resource={getStatList()} />
       </Card> */}
     </Block>

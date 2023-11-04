@@ -14,3 +14,9 @@ export const getStatList = () => {
     statList: wrapPromise<Stat[]>(promise),
   }
 }
+
+export const getStatListWithoutWrapPromise = async (url: string) => {
+  const response = await fetch('http://localhost:3000'.concat(url))
+  const { data } = (await response.json()) as unknown as ApiResponse<Stat[]>
+  return data
+}
