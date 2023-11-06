@@ -1,12 +1,9 @@
 import { StatGroup } from '@chakra-ui/react'
 import StatBox, { Stat } from '~/common/components/StatBox'
 import useSWR from 'swr'
-import { getStatListWithoutWrapPromise } from '~/common/lib/api/stat'
 
 export default function StatCardWithSWR() {
-  const { data: statList } = useSWR<Stat[]>('/stat-list', getStatListWithoutWrapPromise, {
-    suspense: true,
-  })
+  const { data: statList } = useSWR<Stat[]>('/stat-list')
 
   return (
     <StatGroup>
