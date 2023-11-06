@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
 import { router } from './routes'
 import { RouterProvider } from 'react-router-dom'
 import { ChakraProvider } from '@chakra-ui/react'
@@ -23,13 +22,7 @@ async function deferRender() {
   })
 }
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      suspense: true,
-    },
-  },
-})
+const queryClient = new QueryClient()
 
 deferRender().then(() => {
   ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -37,7 +30,6 @@ deferRender().then(() => {
       <ChakraProvider>
         <QueryClientProvider client={queryClient}>
           <RouterProvider router={router} />
-          <App />
         </QueryClientProvider>
       </ChakraProvider>
     </React.StrictMode>,
