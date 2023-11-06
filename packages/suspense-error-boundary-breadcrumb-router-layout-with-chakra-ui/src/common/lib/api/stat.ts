@@ -20,3 +20,9 @@ export const getStatListWithoutWrapPromise = async (url: string) => {
   const { data } = (await response.json()) as unknown as ApiResponse<Stat[]>
   return data
 }
+
+export const getStatListForQueryFn = async (): Promise<Stat[]> => {
+  const response = await fetch('http://localhost:3000/stat-list')
+  const { data } = await response.json()
+  return data
+}
